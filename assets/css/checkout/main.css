@@ -1,12 +1,16 @@
 /* */
 .main__left__form,
 .main__right__form {
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 
     max-width: 640px;
+}
+
+.main__right__form {
+    margin-top: 40px;
 }
 
 /* form */

@@ -6,6 +6,9 @@
 /* checkout */
 @import './checkout/main.css';
 @import './checkout/responsivity.css';
+/* finished */
+@import './finished/main.css';
+@import './finished/responsivity.css';
 
 :root {
     font-size: 62.5%;
