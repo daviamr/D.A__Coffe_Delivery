@@ -1,0 +1,203 @@
+/* buttons style */
+button {
+    cursor: pointer;
+}
+
+.primary__button {
+    text-transform: uppercase;
+    font-family: var(--roboto);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    color: var(--white);
+
+    background: var(--yellow);
+    border-radius: 6px;
+    padding: 12px 8px;
+    transition: .3s;
+}
+
+.primary__button:hover {
+    background: var(--dark-yellow);
+}
+
+.secondary__button {
+    background: var(--base-button);
+    border-radius: 6px;
+    padding: 12px 8px;
+    transition: .3s;
+}
+
+.secondary__button:hover {
+    background: var(--base-hover);
+}
+
+/* cart buttons */
+.cart__button,
+.cart__store__button {
+    background: var(--dark-purple);
+    border-radius: 6px;
+    padding: 8px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.cart__store__button {
+    position: relative;
+    background: var(--light-yellow);
+}
+
+.cart__ .cart__button:hover {
+    background: var(--purple);
+}
+
+.cart__list {
+    position: absolute;
+    top: -6px;
+    right: -5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--baloo);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    color: var(--white);
+
+    background-color: var(--dark-yellow);
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+}
+
+/* .cart__store__button:hover {
+    color: var(--light-yellow);
+    background: var(--yellow);
+} */
+
+.card__button {
+    font-family: var(--roboto);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+    background: var(--base-button);
+    border-radius: 6px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.card__button>img {
+    cursor: pointer;
+}
+
+/* card button */
+.card__select {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+
+    text-transform: uppercase;
+    font-family: var(--roboto);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    background: var(--base-button);
+    border-radius: 6px;
+    padding: 16px;
+    gap: 12px;
+    transition: .3s;
+}
+
+.card__select:hover {
+    background: var(--base-hover);
+}
+
+.card__select:focus {
+    background: var(--light-purple);
+    border: 1px solid var(--purple);
+}
+
+.remove__button {
+    gap: 4px;
+}
+
+/* location button */
+.location__button {
+    font-family: var(--roboto);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--purple);
+
+    background: var(--light-purple);
+    border-radius: 6px;
+    padding: 8px;
+    gap: 4px;
+    transition: .3s;
+}
+
+/* .location__button:hover {
+    background: var(--purple);
+    border-radius: 6px;
+    color: var(--light-purple);
+} */
+
+/* */
+
+/* label / inputs style */
+.form__input,
+.form__input__complement {
+    font-family: var(--roboto);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-text);
+
+    background: var(--base-input);
+    border: 1px solid var(--base-button);
+    border-radius: 4px;
+    padding: 12px;
+    transition: .3s;
+    outline: none;
+}
+
+.form__input:hover {
+    border: 1px solid var(--dark-yellow);
+}
+
+.form__input::placeholder {
+    font-family: var(--roboto);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-label);
+}
+
+.complement__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--roboto);
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-label);
+
+}
+
+.form__input__complement {
+    background: none;
+    border: none;
+    padding: 0;
+}

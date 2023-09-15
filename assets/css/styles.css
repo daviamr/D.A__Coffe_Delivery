@@ -1,0 +1,45 @@
+/* index */
+@import './components.css';
+@import './index/flexbox.css';
+@import './index/main.css';
+@import './index/responsivity.css';
+/* checkout */
+@import './checkout/main.css';
+@import './checkout/responsivity.css';
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+
+    /* font colors */
+    --base-title: #272221;
+    --base-subtitle: #403937;
+    --base-text: #574F4D;
+    --base-label: #8D8686;
+    --base-hover: #D7D5D5;
+    --base-button: #E6E5E5;
+    --base-input: #EDEDED;
+    --base-card: #F3F2F2;
+
+    /* colors */
+    --white: #FFFFFF;
+    --yellow: #DBAC2C;
+    --light-yellow: #F1E9C9;
+    --dark-yellow: #C47F17;
+    --purple: #8047F8;
+    --light-purple: #EBE5F9;
+    --dark-purple: #4B2995;
+    --background: #FAFAFA;
+
+    /* fonts */
+    --roboto: 'Roboto', sans-serif;
+    --baloo: 'Baloo 2', cursive;
+}
+
+button {
+    outline: none;
+    border: none;
+}

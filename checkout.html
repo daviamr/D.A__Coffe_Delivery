@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Coffe Delivery | Checkout</title>
+</head>
+
+<body>
+    <div class="GLOBAL__BOX">
+        <header>
+            <section class="header__container">
+                <nav>
+                    <a href="index.html">
+                        <img src="./assets/img/logo.svg" alt="Logo Coffe Delivery">
+                    </a>
+                </nav>
+                <div class="header__content__buttons">
+                    <button class="flex location__button" data-location>
+                        <img src="./assets/img/icon/location.svg" alt="Imagem contendo o Estado em que você mora">Rio de
+                        Janeiro, RJ
+                    </button>
+                    <button class="flex cart__store__button">
+                        <img src="./assets/img/icon/cart-store.svg"
+                            alt="Imagem de um carrinho contendo a lista de seus produtos">
+                        <span class="cart__list">0</span>
+                    </button>
+                </div>
+            </section>
+        </header>
+
+        <main class="checkout__main">
+            <section class="main__left__form">
+                <div>
+                    <h1 class="title__complete__order">Complete seu pedido</h1>
+                </div>
+                <form>
+                    <div class="background__box">
+                        <div>
+                            <legend class="legend__form">Endereço de Entrega</legend>
+                            <p class="legend__p">Informe o endereço onde deseja receber seu pedido</p>
+                        </div>
+                        <div class="first__infos__content">
+                            <input class="form__input cep" type="text" placeholder="CEP">
+                            <input class="form__input" type="text" placeholder="Rua">
+                        </div>
+                        <div class="second__infos__content">
+                            <input class="form__input number" type="text" placeholder="Número">
+                            <label class="complement__content form__input">
+                                <input class="form__input__complement" type="text" placeholder="Complemento">Opcional
+                            </label>
+                            <input class="form__input neighb" type="text" placeholder="Bairro">
+                            <input class="form__input" type="text" placeholder="Cidade">
+                            <input class="form__input uf" type="text" placeholder="UF" disabled>
+                        </div>
+
+                    </div>
+                </form>
+                <section>
+                    <div class="background__box">
+                        <div>
+                            <h1 class="title__payment">Endereço de Entrega</h1>
+                            <p class="legend__p">O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+                        </div>
+                        <div class="method__payment__content">
+                            <button class="card__select method">
+                                <img src="./assets/img/icon/credit-card.svg"
+                                    alt="Ícone de um cartão representando o método de pagamento como cartão de crédito">
+                                Cartão de Crédito</button>
+                            <button class="card__select method"><img src="./assets/img/icon/bank.svg"
+                                    alt="Ícone de um banco representando o método de pagamento como cartão de débito">
+                                Cartão de Débito</button>
+                            <button class="card__select method"><img src="./assets/img/icon/ballot.svg"
+                                    alt="Ícone de uma cédula representando o método de pagamento como dinheiro">
+                                Dinheiro</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="main__right__form">
+                <div>
+                    <h1 class="title__selected__coffees">Cafés selecionados</h1>
+                </div>
+                <form>
+                    <section class="payment__box">
+                        <div class="selected__coffees">
+                            <img class="image__coffee" src="./assets/img/coffees/Type=Expresso.png"
+                                alt="Foto do café selecionado">
+                            <div class="coffees__info">
+                                <h1 class="title__coffe">Expresso Tradicional</h1>
+                                <div class="buttons__coffee">
+                                    <button class="flex card__button">
+                                        <img src="./assets/img/icon/decrease.svg" alt="Diminuir um">
+                                        1
+                                        <img src="./assets/img/icon/increase.svg" alt="Acrescentar um">
+                                    </button>
+                                    <button class="card__select remove__button">
+                                        <img src="./assets/img/icon/trash.svg"
+                                            alt="Ícone de uma lixeira, representando a ação de remover o item do seu carrinho">
+                                        Remover</button>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="price__coffe">R$ 9,90</span>
+                            </div>
+                        </div>
+                        <div class="selected__coffees">
+                            <img class="image__coffee" src="./assets/img/coffees/Type=Expresso.png"
+                                alt="Foto do café selecionado">
+                            <div class="coffees__info">
+                                <h1 class="title__coffe">Expresso Tradicional</h1>
+                                <div class="buttons__coffee">
+                                    <button class="flex card__button">
+                                        <img src="./assets/img/icon/decrease.svg" alt="Diminuir um">
+                                        1
+                                        <img src="./assets/img/icon/increase.svg" alt="Acrescentar um">
+                                    </button>
+                                    <button class="card__select remove__button">
+                                        <img src="./assets/img/icon/trash.svg"
+                                            alt="Ícone de uma lixeira, representando a ação de remover o item do seu carrinho">
+                                        Remover</button>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="price__coffe">R$ 9,90</span>
+                            </div>
+                        </div>
+                        <div class="selected__coffees">
+                            <img class="image__coffee" src="./assets/img/coffees/Type=Expresso.png"
+                                alt="Foto do café selecionado">
+                            <div class="coffees__info">
+                                <h1 class="title__coffe">Expresso Tradicional</h1>
+                                <div class="buttons__coffee">
+                                    <button class="flex card__button">
+                                        <img src="./assets/img/icon/decrease.svg" alt="Diminuir um">
+                                        1
+                                        <img src="./assets/img/icon/increase.svg" alt="Acrescentar um">
+                                    </button>
+                                    <button class="card__select remove__button">
+                                        <img src="./assets/img/icon/trash.svg"
+                                            alt="Ícone de uma lixeira, representando a ação de remover o item do seu carrinho">
+                                        Remover</button>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="price__coffe">R$ 9,90</span>
+                            </div>
+                        </div>
+                        <div class="selected__coffees">
+                            <img class="image__coffee" src="./assets/img/coffees/Type=Expresso.png"
+                                alt="Foto do café selecionado">
+                            <div class="coffees__info">
+                                <h1 class="title__coffe">Expresso Tradicional</h1>
+                                <div class="buttons__coffee">
+                                    <button class="flex card__button">
+                                        <img src="./assets/img/icon/decrease.svg" alt="Diminuir um">
+                                        1
+                                        <img src="./assets/img/icon/increase.svg" alt="Acrescentar um">
+                                    </button>
+                                    <button class="card__select remove__button">
+                                        <img src="./assets/img/icon/trash.svg"
+                                            alt="Ícone de uma lixeira, representando a ação de remover o item do seu carrinho">
+                                        Remover</button>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="price__coffe">R$ 9,90</span>
+                            </div>
+                        </div>
+                        <div class="payment__infos__content">
+                            <div class="flex2">
+                                <p class="flex2 prices__info">Total de itens</p>
+                                <span class="prices__info">R$ 29,70</span>
+                            </div>
+                            <div class="flex2">
+                                <p class="flex2 prices__info">Entrega</p>
+                                <span class="prices__info">R$ 3,50</span>
+                            </div>
+                            <div class="flex2">
+                                <h1 class="amount__info">Total</h1>
+                                <h2 class="amount__info">R$ 33,20</h2>
+                            </div>
+                        </div>
+                        <button class="primary__button">Confirmar Pedido</button>
+                    </section>
+
+                </form>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

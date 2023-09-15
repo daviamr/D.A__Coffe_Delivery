@@ -1,0 +1,151 @@
+/* */
+.main__left__form,
+.main__right__form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    max-width: 640px;
+}
+
+/* form */
+.title__complete__order,
+.title__selected__coffees,
+.amount__info {
+    font-family: var(--baloo);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+.background__box,
+.payment__box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--base-card);
+    border-radius: 6px;
+    padding: 40px 30px;
+}
+
+.payment__box {
+    border-radius: 6px 44px;
+}
+
+.background__box div:first-child {
+    margin-bottom: 16px;
+}
+
+.legend__form,
+.title__payment {
+    position: relative;
+    font-family: var(--roboto);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-subtitle);
+}
+
+.legend__form::before,
+.title__payment::before {
+    position: absolute;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    left: -25px;
+    top: -2px
+}
+
+.legend__form::before {
+    background-image: url(../../img/icon/location-2.svg);
+}
+
+.title__payment::before {
+    background-image: url(../../img/icon/cypher.svg);
+}
+
+.legend__p {
+    font-family: var(--roboto);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-text);
+}
+
+.first__infos__content,
+.second__infos__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* method payment section */
+.method__payment__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selected__coffees {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px 32px;
+    gap: 20px;
+
+    border-bottom: 1px solid var(--base-button);
+}
+
+.image__coffee {
+    width: 64px;
+    height: 64px;
+}
+
+.coffees__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 172px;
+    gap: 8px;
+}
+
+.title__coffe,
+.prices__info {
+    font-family: var(--roboto);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--base-text);
+}
+
+.buttons__coffee {
+    display: flex;
+    height: 32px;
+    gap: 8px;
+}
+
+.payment__infos__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.price__coffe {
+    font-family: var(--roboto);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+.amount__info {
+    font-size: 2rem;
+}

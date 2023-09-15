@@ -1,0 +1,90 @@
+/* 375px - mobile M */
+@media (min-width: 375px) {
+    .background__box {
+        padding: 40px;
+    }
+
+    .legend__p {
+        font-size: 1.4rem;
+    }
+
+    .legend__form::before,
+    .title__payment::before {
+        left: -30px;
+    }
+
+    .complement__content {
+        font-size: 1.2rem;
+    }
+}
+
+/* 425px - mobile L */
+@media (min-width: 425px) {
+    .payment__infos__content {
+        gap: 16px;
+    }
+
+    .selected__coffees {
+        flex-direction: row;
+    }
+}
+
+/* 768px - tablet */
+@media (min-width: 768px) {
+    .checkout__main {
+        align-self: center;
+    }
+
+    .second__infos__content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px 12px
+    }
+
+    .second__infos__content label {
+        flex-grow: 1;
+    }
+
+    .second__infos__content input:nth-child(4) {
+        flex-grow: 1;
+    }
+
+    .cep,
+    .number,
+    .neighb {
+        width: 200px;
+    }
+
+    .uf {
+        max-width: 60px;
+    }
+
+    .method__payment__content {
+        flex-direction: row;
+    }
+
+    .method {
+        width: 178px;
+    }
+}
+
+/* 1024px - laptop */
+@media (min-width: 1024px) {}
+
+/* 1440px - laptop L */
+@media (min-width: 1200px) {
+    .GLOBAL__BOX {
+        height: 100vh;
+    }
+
+    .checkout__main {
+        display: flex;
+        justify-content: space-between;
+        align-self: normal;
+    }
+
+    .selected__coffees {
+        height: 80px;
+    }
+
+}
