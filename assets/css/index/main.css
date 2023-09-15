@@ -225,3 +225,12 @@
     display: flex;
     gap: 8px;
 }
+
+.span__amount {
+    font-family: var(--roboto);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    background: var(--base-button);
+}
