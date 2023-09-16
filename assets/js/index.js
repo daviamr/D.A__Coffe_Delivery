@@ -1,3 +1,4 @@
+//(index.html)
 const fieldCards = document.querySelector('[data-cards]');
 const cards = [
     {
@@ -114,7 +115,7 @@ const cards = [
     }
 
 ];
-
+//func to create the cards
 function createACard(image, type, title, description, price, amount) {
     const formatedPrice = price.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
@@ -148,7 +149,7 @@ cards.forEach(card => {
     createACard(card.image, card.type, card.title, card.description, card.price, card.amount);
 })
 
-//interação de quantidade e valor (index.html)
+//quanty and price interaction (index.html)
 const increaseB = document.querySelectorAll('#increase');
 const decreaseB = document.querySelectorAll('#decrease');
 const priceField = document.querySelectorAll('#price');
@@ -180,4 +181,3 @@ decreaseB.forEach((btn, i) => btn.addEventListener('click', () => {
         priceField[i].innerText = `${subtractPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
     }
 }));
-

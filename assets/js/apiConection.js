@@ -1,6 +1,9 @@
-async function viaCep(cep) {
-    const endpoint = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+async function searchCep(cep) {
+    const endpoint = await fetch(`https://viacep.com.br/ws/25560461/json/`);
     const dataConverted = await endpoint.json();
-    console.log(dataConverted)
+    return dataConverted;
 }
-viaCep(25561140)
+
+export const apiConection = {
+    searchCep
+}
