@@ -115,6 +115,7 @@ const cards = [
     }
 
 ];
+const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 //func to create the cards
 function createACard(image, type, title, description, price, amount) {
     const formatedPrice = price.toLocaleString('pt-br', { minimumFractionDigits: 2 });
@@ -135,7 +136,7 @@ function createACard(image, type, title, description, price, amount) {
         <span class="span__amount" id="amountValue">${amount}</span>
         <img src="./assets/img/icon/increase.svg" alt="Acrescentar um" id="increase">
     </div>
-    <button class="cart__button">
+    <button class="cart__button" id="selectButton">
     <img src="./assets/img/icon/white-cart-2.svg"
     alt="Imagem de um carrinho, para adicionar um item à sua lista">
     </button>
@@ -181,3 +182,37 @@ decreaseB.forEach((btn, i) => btn.addEventListener('click', () => {
         priceField[i].innerText = `${subtractPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
     }
 }));
+
+//cart list interaction
+const quantity = document.getElementById('item__quantity');
+const select = document.querySelectorAll('#selectButton');
+
+select.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+        const selectedCoffe = {
+            'image': `${cards[i].image}`,
+            'type': `${cards[i].type}`,
+            'title': `${cards[i].title}`,
+            'description': `${cards[i].description}`,
+            'price': `${cards[i].price}`,
+            'amount': `${cards[i].amount}`
+        }
+        cartItems.push(selectedCoffe);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        quantityItems();
+    })
+})
+
+function quantityItems() {
+    const quantityInLocalStorage = JSON.parse(localStorage.getItem('cart'));
+
+    cartQuantity = quantityInLocalStorage.map(item => {
+        return { amount: item.amount }
+    });
+
+    totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+
+    quantity.innerText = totalAmount;
+
+}
+quantityItems()

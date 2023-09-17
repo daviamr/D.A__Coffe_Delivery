@@ -3,6 +3,7 @@
 @import './index/flexbox.css';
 @import './index/main.css';
 @import './index/responsivity.css';
+@import './cart.css';
 /* checkout */
 @import './checkout/main.css';
 @import './checkout/responsivity.css';
