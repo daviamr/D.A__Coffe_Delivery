@@ -14,6 +14,12 @@
 }
 
 /* form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .title__complete__order,
 .title__selected__coffees,
 .amount__info {
@@ -32,6 +38,7 @@
     background: var(--base-card);
     border-radius: 6px;
     padding: 40px 30px;
+
 }
 
 .payment__box {
@@ -114,7 +121,7 @@
 
 .coffees__info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 172px;
     gap: 8px;
@@ -152,4 +159,12 @@
 
 .amount__info {
     font-size: 2rem;
+}
+
+.cart__sec {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 362px;
+    overflow-y: auto;
 }

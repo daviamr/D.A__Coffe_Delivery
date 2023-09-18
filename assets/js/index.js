@@ -26,7 +26,7 @@ const cards = [
         'amount': 1,
     },
     {
-        'image': './assets/img/coffees/Type=CaféGelado.png',
+        'image': './assets/img/coffees/Type=CafeGelado.png',
         'type': 'Tradicional | Gelado',
         'title': 'Expresso Gelado',
         'description': 'Bebida preparada com café expresso e cubos de gelo',
@@ -34,7 +34,7 @@ const cards = [
         'amount': 1,
     },
     {
-        'image': './assets/img/coffees/Type=CafécomLeite.png',
+        'image': './assets/img/coffees/Type=CafecomLeite.png',
         'type': 'Tradicional | Com leite',
         'title': 'Café com Leite',
         'description': 'Meio a meio de expresso tradicional com leite vaporizado',
@@ -98,7 +98,7 @@ const cards = [
         'amount': 1,
     },
     {
-        'image': './assets/img/coffees/Type=Árabe.png',
+        'image': './assets/img/coffees/Type=Arabe.png',
         'type': 'Especial',
         'title': 'Árabe',
         'description': 'Bebida preparada com grãos de café árabe e especiarias',
@@ -106,7 +106,7 @@ const cards = [
         'amount': 1,
     },
     {
-        'image': './assets/img/coffees/Type=Irlandês.png',
+        'image': './assets/img/coffees/Type=Irlandes.png',
         'type': 'Especial | Alcoólico',
         'title': 'Irlandês',
         'description': 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
@@ -155,6 +155,7 @@ const increaseB = document.querySelectorAll('#increase');
 const decreaseB = document.querySelectorAll('#decrease');
 const priceField = document.querySelectorAll('#price');
 
+//increase item
 increaseB.forEach((btn, i) => btn.addEventListener('click', () => {
     if (cards[i].amount < 30) {
         cards[i].amount++;
@@ -169,6 +170,7 @@ increaseB.forEach((btn, i) => btn.addEventListener('click', () => {
     }
 }));
 
+//decrease item
 decreaseB.forEach((btn, i) => btn.addEventListener('click', () => {
     if (cards[i].amount > 1) {
         cards[i].amount--;
@@ -199,20 +201,20 @@ select.forEach((btn, i) => {
         }
         cartItems.push(selectedCoffe);
         localStorage.setItem('cart', JSON.stringify(cartItems));
-        quantityItems();
+        numberItemsCart();
     })
 })
 
-function quantityItems() {
+//function to get all arrays in local storage and sum the 'amount'
+function numberItemsCart() {
     const quantityInLocalStorage = JSON.parse(localStorage.getItem('cart'));
+    if (quantityInLocalStorage.length > 0) {
+        let cartQuantity = quantityInLocalStorage.map(item => {
+            return { amount: item.amount };
+        });
 
-    cartQuantity = quantityInLocalStorage.map(item => {
-        return { amount: item.amount }
-    });
-
-    totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
-
-    quantity.innerText = totalAmount;
-
+        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+        quantity.innerText = totalAmount;
+    }
 }
-quantityItems()
+numberItemsCart()

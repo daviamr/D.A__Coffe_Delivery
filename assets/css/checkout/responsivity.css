@@ -76,6 +76,7 @@
     .checkout__main {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
         align-self: normal;
     }
 
