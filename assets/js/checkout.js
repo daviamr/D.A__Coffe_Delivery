@@ -36,6 +36,7 @@ cepField.addEventListener('focusout', () => {
 const sectionCard = document.getElementById('cart__section');
 
 function createACard(image, title, amount, price) {
+
     const priceFloat = parseFloat(price);
 
     sectionCard.innerHTML += `

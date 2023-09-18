@@ -188,15 +188,20 @@ decreaseB.forEach((btn, i) => btn.addEventListener('click', () => {
 //cart list interaction
 const quantity = document.getElementById('item__quantity');
 const select = document.querySelectorAll('#selectButton');
+const price = document.querySelectorAll('#price');
 
 select.forEach((btn, i) => {
     btn.addEventListener('click', () => {
+
+        let priceMultipliedCorrectly = price[i].textContent;
+        priceMultipliedCorrectly = parseFloat(priceMultipliedCorrectly.replace(',', '.'));
+
         const selectedCoffe = {
             'image': `${cards[i].image}`,
             'type': `${cards[i].type}`,
             'title': `${cards[i].title}`,
             'description': `${cards[i].description}`,
-            'price': `${cards[i].price}`,
+            'price': `${priceMultipliedCorrectly}`,
             'amount': `${cards[i].amount}`
         }
         cartItems.push(selectedCoffe);
