@@ -196,7 +196,7 @@ select.forEach((btn, i) => {
         let priceMultipliedCorrectly = price[i].textContent;
         priceMultipliedCorrectly = parseFloat(priceMultipliedCorrectly.replace(',', '.'));
 
-        const selectedCoffe = {
+        let selectedCoffe = {
             'image': `${cards[i].image}`,
             'type': `${cards[i].type}`,
             'title': `${cards[i].title}`,
@@ -204,7 +204,22 @@ select.forEach((btn, i) => {
             'price': `${priceMultipliedCorrectly}`,
             'amount': `${cards[i].amount}`
         }
-        cartItems.push(selectedCoffe);
+
+        let coffeeExists = false;
+
+        //checks if the item is already in the cart, if so, just update the quantity in the existing item
+        if (cartItems.length > 0) {
+            cartItems.some((card, index) => {
+                if (card.title === `${cards[i].title}`) {
+                    cartItems[index].amount = parseInt(cartItems[index].amount) + parseInt(selectedCoffe.amount);
+                    coffeeExists = true;
+                }
+                return
+            });
+        }
+        if (!coffeeExists) {
+            cartItems.push(selectedCoffe);
+        }
         localStorage.setItem('cart', JSON.stringify(cartItems));
         numberItemsCart();
     })
@@ -213,13 +228,16 @@ select.forEach((btn, i) => {
 //function to get all arrays in local storage and sum the 'amount'
 function numberItemsCart() {
     const quantityInLocalStorage = JSON.parse(localStorage.getItem('cart'));
-    if (quantityInLocalStorage.length > 0) {
-        let cartQuantity = quantityInLocalStorage.map(item => {
-            return { amount: item.amount };
-        });
 
-        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
-        quantity.innerText = totalAmount;
-    }
+    let cartQuantity = quantityInLocalStorage.map(item => {
+        return { amount: item.amount };
+    });
+
+    totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+    quantity.innerText = totalAmount;
 }
 numberItemsCart()
+
+function verifyCoffe(cartItems, itemTitle) {
+    return cartItems.includes(itemTitle);
+}
