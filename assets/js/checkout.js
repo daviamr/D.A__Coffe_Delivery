@@ -77,7 +77,7 @@ const totalPrice = document.getElementById('total__price');
 const totalWithDelivery = document.getElementById('total__with__delivery');
 
 if (cardsLocalStorage.length > 0) {
-    prices = cardsLocalStorage.map(card => { return { price: card.price } });
+    prices = cardsLocalStorage.map(card => { return { price: card.price * card.amount } });
     totalItems = prices.reduce((acc, item) => acc + parseFloat(item.price), 0);
 
     totalWDelivery = totalItems + deliveryP;
