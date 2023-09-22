@@ -116,9 +116,13 @@ const cards = [
 
 ];
 const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+function formatter(element) {
+    return element.toLocaleString('pt-br', { minimumFractionDigits: 2 });
+}
+
 //func to create the cards
 function createACard(image, type, title, description, price, amount) {
-    const formatedPrice = price.toLocaleString('pt-br', { minimumFractionDigits: 2 });
 
     fieldCards.innerHTML += `
 <div class="card__item">
@@ -129,7 +133,7 @@ function createACard(image, type, title, description, price, amount) {
         <h2 class="card__subtitle">${description}</h2>
     </div>
     <div class="card__box">
-        <p class="card__coin">R$ <span id="price">${formatedPrice}</span></p>
+        <p class="card__coin">R$ <span id="price">${formatter(price)}</span></p>
         <div class="card__buttons__content">
         <div class="flex card__button">
         <img src="./assets/img/icon/decrease.svg" alt="Diminuir um" id="decrease">
@@ -166,7 +170,7 @@ increaseB.forEach((btn, i) => btn.addEventListener('click', () => {
         let spanIncreaseAmount = btn.previousElementSibling;
 
         spanIncreaseAmount.innerText = `${cards[i].amount}`;
-        priceField[i].innerText = `${multiplyPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
+        priceField[i].innerText = `${formatter(multiplyPrice)}`
     }
 }));
 
@@ -181,7 +185,7 @@ decreaseB.forEach((btn, i) => btn.addEventListener('click', () => {
         let spanDecreaseAmount = btn.nextElementSibling;
 
         spanDecreaseAmount.innerText = `${cards[i].amount}`;
-        priceField[i].innerText = `${subtractPrice.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
+        priceField[i].innerText = `${formatter(subtractPrice)}`
     }
 }));
 
