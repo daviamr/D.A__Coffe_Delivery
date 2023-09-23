@@ -216,6 +216,7 @@ select.forEach((btn, i) => {
             cartItems.some((card, index) => {
                 if (card.title === `${cards[i].title}`) {
                     cartItems[index].amount = parseInt(cartItems[index].amount) + parseInt(selectedCoffe.amount);
+                    cartItems[index].price = parseFloat(cartItems[index].price) + parseFloat(selectedCoffe.price);
                     coffeeExists = true;
                 }
                 return
