@@ -84,4 +84,8 @@
         height: 80px;
     }
 
+    .payment__box {
+        min-width: 460px;
+    }
+
 }

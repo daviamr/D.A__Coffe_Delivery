@@ -22,12 +22,18 @@
 
 .title__complete__order,
 .title__selected__coffees,
-.amount__info {
+.amount__info,
+.none__selected {
     font-family: var(--baloo);
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
+}
+
+.none__selected {
+    display: none;
+    text-align: center;
 }
 
 .background__box,
