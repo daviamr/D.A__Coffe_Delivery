@@ -207,6 +207,10 @@ function numberItemsCart() {
     }
 }
 
+if (cardsLocalStorage.length > 0) {
+    numberItemsCart();
+}
+
 const sectionCard = document.getElementById('cart__section');
 
 function createACard(image, title, amount, price) {

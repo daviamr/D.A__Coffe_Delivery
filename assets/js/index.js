@@ -235,18 +235,17 @@ select.forEach((btn, i) => {
 function numberItemsCart() {
     const quantityInLocalStorage = JSON.parse(localStorage.getItem('cart'));
 
-    if (quantityInLocalStorage > 0) {
-        let cartQuantity = quantityInLocalStorage.map(item => {
-            return { amount: item.amount };
-        });
 
-        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
-        quantity.innerText = totalAmount;
-    }
+    let cartQuantity = quantityInLocalStorage.map(item => {
+        return { amount: item.amount };
+    });
+
+    totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+    quantity.innerText = totalAmount;
+
 
 }
-numberItemsCart()
 
-function verifyCoffe(cartItems, itemTitle) {
-    return cartItems.includes(itemTitle);
+if (cartItems.length > 0) {
+    numberItemsCart()
 }
