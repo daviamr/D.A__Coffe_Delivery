@@ -5,7 +5,7 @@ const cityField = document.getElementById('city');
 const ufField = document.getElementById('uf');
 
 
-const localpoint = document.querySelector('[data-location]')
+const localpoint = document.querySelector('[data-location]');
 const submit = document.getElementById('submit');
 const numberField = document.getElementById('number');
 
