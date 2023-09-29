@@ -158,10 +158,10 @@ async function searchCep(cepS) {
 
         return dataConv;
     } catch (erro) {
-        cepField.classList.toggle('set__error');
+        cepField.classList.add('set__error');
         cepField.setAttribute('placeholder', 'CEP não encontrado');
 
-        local.innerHTML = `<img src="./assets/img/icon/location.svg" alt="Imagem contendo o Estado em que você mora">`;
+        localpoint.innerHTML = `<img src="./assets/img/icon/location.svg" alt="Imagem contendo o Estado em que você mora">`;
 
         resetFields();
     }
@@ -170,7 +170,10 @@ async function searchCep(cepS) {
 
 cepField.addEventListener('focusout', () => {
     const cepValue = cepField.value;
-    searchCep(cepValue)
+
+    if (cepValue.length >= 4) {
+        searchCep(cepValue)
+    }
 });
 
 function resetFields() {
@@ -203,7 +206,6 @@ function numberItemsCart() {
         quantity.innerText = `0`;
     }
 }
-numberItemsCart()
 
 const sectionCard = document.getElementById('cart__section');
 

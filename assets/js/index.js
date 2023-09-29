@@ -235,12 +235,15 @@ select.forEach((btn, i) => {
 function numberItemsCart() {
     const quantityInLocalStorage = JSON.parse(localStorage.getItem('cart'));
 
-    let cartQuantity = quantityInLocalStorage.map(item => {
-        return { amount: item.amount };
-    });
+    if (quantityInLocalStorage > 0) {
+        let cartQuantity = quantityInLocalStorage.map(item => {
+            return { amount: item.amount };
+        });
 
-    totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
-    quantity.innerText = totalAmount;
+        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+        quantity.innerText = totalAmount;
+    }
+
 }
 numberItemsCart()
 
