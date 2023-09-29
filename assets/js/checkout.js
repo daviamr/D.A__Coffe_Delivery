@@ -4,6 +4,11 @@ const neighbField = document.getElementById('neighb');
 const cityField = document.getElementById('city');
 const ufField = document.getElementById('uf');
 
+
+const localpoint = document.querySelector('[data-location]')
+const submit = document.getElementById('submit');
+const numberField = document.getElementById('number');
+
 const cards = [
     {
         'image': './assets/img/coffees/Type=Expresso.png',
@@ -128,16 +133,38 @@ function formatter(element) {
 ///////////////////////////////////////////////////////////////////////////
 //ViaCep API
 async function searchCep(cepS) {
-    const endpoint = await fetch(`https://viacep.com.br/ws/${cepS}/json/`);
-    const dataConv = await endpoint.json();
+    try {
+        const endpoint = await fetch(`https://viacep.com.br/ws/${cepS}/json/`);
+        const dataConv = await endpoint.json();
 
-    cepField.value = `${dataConv.cep}`
-    roadField.value = `${dataConv.logradouro}`
-    neighbField.value = `${dataConv.bairro}`
-    cityField.value = `${dataConv.localidade}`
-    ufField.value = `${dataConv.uf}`
+        if (dataConv.erro) {
+            throw Error('deu ruim2');
+        } else {
+            cepField.value = `${dataConv.cep}`
+            roadField.value = `${dataConv.logradouro}`
+            neighbField.value = `${dataConv.bairro}`
+            cityField.value = `${dataConv.localidade}`
+            ufField.value = `${dataConv.uf}`
 
-    return dataConv;
+            localpoint.innerHTML = `<img src="./assets/img/icon/location.svg" alt="Imagem contendo o Estado em que você mora">${dataConv.localidade}, ${dataConv.uf}`;
+        }
+
+        setSucess(cepField);
+        setSucess(roadField);
+        setSucess(numberField);
+        setSucess(neighbField);
+        setSucess(cityField);
+        setSucess(ufField);
+
+        return dataConv;
+    } catch (erro) {
+        cepField.classList.toggle('set__error');
+        cepField.setAttribute('placeholder', 'CEP não encontrado');
+
+        local.innerHTML = `<img src="./assets/img/icon/location.svg" alt="Imagem contendo o Estado em que você mora">`;
+
+        resetFields();
+    }
 
 }
 
@@ -146,11 +173,39 @@ cepField.addEventListener('focusout', () => {
     searchCep(cepValue)
 });
 
+function resetFields() {
+    cepField.value = '';
+    roadField.value = '';
+    numberField.value = '';
+    neighbField.value = '';
+    cityField.value = '';
+    ufField.value = '';
+}
+
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
 //Checkout cart
-let sectionCard = document.getElementById('cart__section');
+
+//function to get all arrays in local storage and sum the 'amount'
+const quantity = document.getElementById('item__quantity');
+const select = document.querySelectorAll('#selectButton');
+
+function numberItemsCart() {
+    if (cardsLocalStorage.length > 0) {
+        let cartQuantity = cardsLocalStorage.map(item => {
+            return { amount: item.amount };
+        });
+
+        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
+        quantity.innerText = totalAmount;
+    } else {
+        quantity.innerText = `0`;
+    }
+}
+numberItemsCart()
+
+const sectionCard = document.getElementById('cart__section');
 
 function createACard(image, title, amount, price) {
 
@@ -300,7 +355,6 @@ function finalCalc() {
                 <h2 class="amount__info" id="total__with__delivery">${formatter(totalWDelivery)}</h2>
             </div>
         </div>
-        <button class="primary__button">Confirmar Pedido</button>
         `
 
     } else {
@@ -320,12 +374,10 @@ function finalCalc() {
                 <h2 class="amount__info" id="total__with__delivery">R$ ${formatter(totalWDelivery)}</h2>
             </div>
         </div>
-        <button class="primary__button">Confirmar Pedido</button>
         `
     }
 }
 finalCalc();
-
 
 //function to release the alert that there are no coffees selected
 function noneSelected() {
@@ -333,20 +385,56 @@ function noneSelected() {
     return noneSTitle.style.display = 'block';
 }
 
-//function to get all arrays in local storage and sum the 'amount'
-const quantity = document.getElementById('item__quantity');
-const select = document.querySelectorAll('#selectButton');
-
-function numberItemsCart() {
-    if (cardsLocalStorage.length > 0) {
-        let cartQuantity = cardsLocalStorage.map(item => {
-            return { amount: item.amount };
-        });
-
-        totalAmount = cartQuantity.reduce((acc, item) => acc + parseInt(item.amount), 0)
-        quantity.innerText = totalAmount;
-    } else {
-        quantity.innerText = `0`;
-    }
+function setError(field) {
+    return field.classList.add('set__error');
 }
-numberItemsCart()
+
+function setSucess(field) {
+    return field.classList.remove('set__error');
+}
+
+submit.addEventListener('click', (e) => {
+    const saveLocation = [];
+    e.preventDefault();
+
+    // const paymentMethod = document.querySelectorAll('.method');
+    if (!cepField.value || !roadField.value || !neighbField.value || !cityField.value) {
+
+        e.preventDefault();
+
+        setError(cepField);
+        setError(roadField);
+        setError(neighbField);
+        setError(cityField);
+        setError(ufField);
+    } else if (!numberField.value) {
+
+        e.preventDefault();
+        setError(numberField);
+    } else if (cardsLocalStorage.length <= 0) {
+        e.preventDefault();
+        alert('Não há itens selecionados.');
+
+        resetFields();
+    } else {
+
+        const location = {
+            'road': roadField.value,
+            'number': numberField.value,
+            'neighborhood': neighbField.value,
+            'city': cityField.value,
+            'uf': ufField.value
+        }
+
+        saveLocation.push(location)
+        localStorage.setItem('adress', JSON.stringify(saveLocation));
+
+        setTimeout(() => {
+            window.location.href = '../finished.html'
+        }, 500);
+    }
+});
+
+numberField.addEventListener('focusout', () => {
+    numberField.classList.remove('set__error');
+})

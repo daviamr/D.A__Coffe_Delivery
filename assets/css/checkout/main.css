@@ -4,13 +4,16 @@
     margin-top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
 
-    max-width: 640px;
+}
+
+.principal__form__content {
+    max-width: 64rem;
 }
 
 .main__right__form {
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 /* form */
@@ -29,6 +32,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
+}
+
+.title__complete__order,
+.title__selected__coffees {
+    margin-bottom: 1.6rem;
 }
 
 .none__selected {
@@ -102,6 +110,10 @@
     gap: 24px;
 }
 
+.first__infos__content {
+    margin-bottom: .8rem;
+}
+
 /* method payment section */
 .method__payment__content {
     display: flex;
@@ -173,4 +185,10 @@
     gap: 24px;
     max-height: 362px;
     overflow-y: auto;
+}
+
+/* validation */
+.set__error {
+    color: #FF0000;
+    border-color: #FF0000;
 }

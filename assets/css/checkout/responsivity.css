@@ -69,7 +69,25 @@
 }
 
 /* 1024px - laptop */
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    .checkout__main {
+        align-self: normal;
+        width: 100%;
+    }
+
+    .main__left__form {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .main__right__form {
+        width: 100%;
+    }
+
+    .principal__form__content {
+        max-width: 64rem;
+    }
+}
 
 /* 1440px - laptop L */
 @media (min-width: 1200px) {

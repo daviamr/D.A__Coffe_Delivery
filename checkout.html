@@ -39,67 +39,71 @@
         <main class="checkout__main">
             <section class="main__left__form">
                 <div>
-                    <h1 class="title__complete__order">Complete seu pedido</h1>
-                </div>
-                <form class="form" id="form">
-                    <div class="background__box">
-                        <div>
-                            <legend class="legend__form">Endereço de Entrega</legend>
-                            <p class="legend__p">Informe o endereço onde deseja receber seu pedido</p>
-                        </div>
-                        <div class="first__infos__content">
-                            <input class="form__input cep" type="text" placeholder="CEP" id="cep">
-                            <input class="form__input" type="text" placeholder="Rua" id="road">
-                        </div>
-                        <div class="second__infos__content">
-                            <input class="form__input number" type="text" placeholder="Número">
-                            <label class="complement__content form__input">
-                                <input class="form__input__complement" type="text" placeholder="Complemento">Opcional
-                            </label>
-                            <input class="form__input neighb" type="text" placeholder="Bairro" id="neighb">
-                            <input class="form__input" type="text" placeholder="Cidade" id="city">
-                            <input class="form__input uf" type="text" placeholder="UF" disabled id="uf">
-                        </div>
-
+                    <div>
+                        <h1 class="title__complete__order">Complete seu pedido</h1>
                     </div>
-                    <section>
-                        <div class="background__box">
+                    <form class="form" id="form">
+                        <div class="background__box principal__form__content">
                             <div>
-                                <h1 class="title__payment">Endereço de Entrega</h1>
-                                <p class="legend__p">O pagamento é feito na entrega. Escolha a forma que deseja pagar
-                                </p>
+                                <legend class="legend__form">Endereço de Entrega</legend>
+                                <p class="legend__p">Informe o endereço onde deseja receber seu pedido</p>
                             </div>
-                            <div class="method__payment__content">
-                                <button class="card__select method" type="button">
-                                    <img src="./assets/img/icon/credit-card.svg"
-                                        alt="Ícone de um cartão representando o método de pagamento como cartão de crédito">
-                                    Cartão de Crédito</button>
-                                <button class="card__select method" type="button">
-                                    <img src="./assets/img/icon/bank.svg"
-                                        alt="Ícone de um banco representando o método de pagamento como cartão de débito">
-                                    Cartão de Débito</button>
-                                <button class="card__select method" type="button">
-                                    <img src="./assets/img/icon/ballot.svg"
-                                        alt="Ícone de uma cédula representando o método de pagamento como dinheiro">
-                                    Dinheiro</button>
+                            <div class="first__infos__content">
+                                <input class="form__input cep" type="text" placeholder="CEP" id="cep">
+                                <input class="form__input" type="text" placeholder="Rua" id="road">
                             </div>
+                            <div class="second__infos__content">
+                                <input class="form__input number" type="number" placeholder="Número" id="number">
+                                <label class="complement__content form__input">
+                                    <input class="form__input__complement" type="text"
+                                        placeholder="Complemento">Opcional
+                                </label>
+                                <input class="form__input neighb" type="text" placeholder="Bairro" id="neighb">
+                                <input class="form__input" type="text" placeholder="Cidade" id="city">
+                                <input class="form__input uf" type="text" placeholder="UF" disabled id="uf">
+                            </div>
+
                         </div>
-                    </section>
-            </section>
-            <section class="main__right__form">
-                <div>
-                    <h1 class="title__selected__coffees">Cafés selecionados</h1>
-                </div>
-                <form>
-                    <div class="payment__box">
-                        <h1 class="none__selected" id="none__selected">Nenhum café selecionado.</h1>
-                        <section class="cart__sec" id="cart__section">
+                        <section>
+                            <div class="background__box">
+                                <div>
+                                    <h1 class="title__payment">Endereço de Entrega</h1>
+                                    <p class="legend__p">O pagamento é feito na entrega. Escolha a forma que deseja
+                                        pagar
+                                    </p>
+                                </div>
+                                <div class="method__payment__content">
+                                    <button class="card__select method" type="button">
+                                        <img src="./assets/img/icon/credit-card.svg"
+                                            alt="Ícone de um cartão representando o método de pagamento como cartão de crédito">
+                                        Cartão de Crédito</button>
+                                    <button class="card__select method" type="button">
+                                        <img src="./assets/img/icon/bank.svg"
+                                            alt="Ícone de um banco representando o método de pagamento como cartão de débito">
+                                        Cartão de Débito</button>
+                                    <button class="card__select method" type="button">
+                                        <img src="./assets/img/icon/ballot.svg"
+                                            alt="Ícone de uma cédula representando o método de pagamento como dinheiro">
+                                        Dinheiro</button>
+                                </div>
+                            </div>
                         </section>
-                        <div class="payment__infos__content" id="payment__area">
+                </div>
+                <section class="main__right__form">
+                    <div>
+                        <div>
+                            <h1 class="title__selected__coffees">Cafés selecionados</h1>
+                        </div>
+                        <div class="payment__box">
+                            <h1 class="none__selected" id="none__selected">Nenhum café selecionado.</h1>
+                            <section class="cart__sec" id="cart__section">
+                            </section>
+                            <div class="payment__infos__content" id="payment__area">
+                            </div>
+                            <button class="primary__button" id="submit">Confirmar Pedido</button>
                         </div>
                     </div>
-
-                </form>
+                </section>
             </section>
             </form>
         </main>
