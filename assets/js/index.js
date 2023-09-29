@@ -201,6 +201,7 @@ select.forEach((btn, i) => {
         priceMultipliedCorrectly = parseFloat(priceMultipliedCorrectly.replace(',', '.'));
 
         let selectedCoffe = {
+            'id': `${cartItems.length}`,
             'image': `${cards[i].image}`,
             'type': `${cards[i].type}`,
             'title': `${cards[i].title}`,

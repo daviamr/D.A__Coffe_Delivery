@@ -44,6 +44,9 @@ body {
 }
 
 button {
+
+    color: var(--black);
+
     outline: none;
     border: none;
 }

@@ -241,18 +241,35 @@ decreaseB.forEach((btn, i) => {
     })
 })
 
+const image = document.querySelectorAll('.image__coffee');
+
 removeB.forEach((btn, i) => {
+    btn.setAttribute('id', `${cardsLocalStorage[i].id}`);
+
     btn.addEventListener('click', () => {
-        cardsLocalStorage.splice(i, 1);
+        for (let j = cardsLocalStorage.length - 1; j >= 0; j--) {
+            if (btn.id === cardsLocalStorage[j].id) {
+
+                const parentNode = image[i].parentNode;
+
+                console.log(cardsLocalStorage[j].title, image[i]);
+                cardsLocalStorage.splice(j, 1);
+                parentNode.remove();
+
+                // console.log(`${btn.id, cardsLocalStorage[j].id}`);
+
+                // sectionCard.innerHTML = ``
+                // cardsLocalStorage.forEach(card =>
+                //     createACard(card.image, card.title, card.amount, card.price));
+
+                finalCalc();
+                numberItemsCart();
+                break
+            }
+        }
         localStorage.setItem('cart', JSON.stringify(cardsLocalStorage));
-
-        sectionCard.innerHTML = ``;
-        cardsLocalStorage.forEach(card => createACard(card.image, card.title, card.amount, card.price));
-
-        finalCalc();
-        numberItemsCart();
     })
-})
+});
 
 //Payment area
 function finalCalc() {
