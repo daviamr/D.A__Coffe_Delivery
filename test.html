@@ -2,23 +2,32 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hiddenpoint.png</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hiddenpoint.png</title>
 </head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9ZCGWW5K9"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-Q9ZCGWW5K9');
+        gtag('config', 'G-Q9ZCGWW5K9');
+
+        // Função para enviar evento ao Google Analytics
+        function enviarEventoGoogleAnalytics() {
+                gtag('event', 'Abertura de E-mail', {
+                        'event_category': 'Engajamento',
+                        'event_label': 'Abertura de E-mail',
+                        'non_interaction': true // Evita que o evento afete as taxas de rejeição
+                });
+        }
 </script>
 
-<body>
-    <img src="./assets/img/hiddenpoint.png">
+<body style="background: black; ">
+        <img src="./assets/img/hiddenpoint.png">
 </body>
 
 </html>
